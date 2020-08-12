@@ -29,5 +29,24 @@ def play(songs)
   end
   end
   
+  def exit_jukebox
+    puts "Goodbye"
+  end
   
-  def run 
+  
+  def run(songs)
+    puts "Please enter a command:"
+    command = gets.strip
+    while command != exit
+    if command == "help"
+      help
+      elsif command == "list"
+      list(songs)
+      elsif command == "play"
+      play(songs)
+    else
+      puts "Invalid input, please try again"
+    end
+  end
+    exit_jukebox
+end
