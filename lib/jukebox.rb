@@ -32,7 +32,7 @@ def play(songs_array)
   songs_array.each do |track|
     if track.include? input
       return puts "Playing #{track}"
-    elsif (1..9).to_a.include? input.to_i
+    elsif (1..9).include? input.to_i
       return puts "Playing #{songs_array[input.to_i-1]}"
     end
   end
