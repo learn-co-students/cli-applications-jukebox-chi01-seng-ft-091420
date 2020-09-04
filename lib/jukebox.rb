@@ -44,6 +44,22 @@ def exit_jukebox
   puts"Goodbye"
 end
 
+def run(songs_array)
+  until false do
+  puts "Please enter a command:"
+  input = gets.downcase.strip
+    if input == "list"
+      list(songs_array)
+    elsif input == "play"
+      play(songs_array)
+    elsif input == "help"
+      help
+    elsif input == "exit"  
+      exit_jukebox
+      break
+    end
+  end
+end
 
 # def run(songs_array)
 #   puts "Please enter a command:"
@@ -62,25 +78,25 @@ end
 #   end
 # end
   
-def run(songs_array)
-  while true do
-    puts "Please enter a command:"
-    response = gets.chomp
-    case response
-    when "exit"
-      exit_jukebox
-      break
-    when "play"
-      play(songs_array)
-    when "help"
-      help
-    when "list"
-      list(songs_array)
-    else
-      puts "Invalid entry"
-    end
-  end
-end  
+# def run(songs_array)
+#   while true do
+#     puts "Please enter a command:"
+#     response = gets.strip
+#     case response
+#     when "exit"
+#       exit_jukebox
+#       break
+#     when "play"
+#       play(songs_array)
+#     when "help"
+#       help
+#     when "list"
+#       list(songs_array)
+#     else
+#       puts "Invalid entry"
+#     end
+#   end
+# end  
   
 # def run(songs_array)
 #   help
