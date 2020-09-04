@@ -28,11 +28,11 @@ end
 
 def play(songs_array)
   puts "Please enter a song name or number:"
-  input = gets.strip
+  input = gets.downcase.strip
   songs_array.each do |track|
-    if track.include? input
+    if track.downcase.include? input
       return puts "Playing #{track}"
-    elsif (1..9).include? input.to_i
+    elsif (1..9).include?(input.to_i)
       return puts "Playing #{songs_array[input.to_i-1]}"
     end
   end
@@ -44,9 +44,10 @@ def exit_jukebox
   puts"Goodbye"
 end
 
+
 def run(songs_array)
   puts "Please enter a command:"
-  input = gets.strip
+  input = gets.downcase.strip
   if input == "exit"
     exit_jukebox
   elsif input == "list"
@@ -54,11 +55,30 @@ def run(songs_array)
     run(songs_array)
   elsif input == "play"
     play(songs_array)
+    run(songs_array)
   elsif input == "help"
     help
+    run(songs_array)
   end
 end
   
+  
+# def run(songs_array)
+#   help
+#   puts "Please enter a command:"
+#   input = gets.downcase.strip
+#   until input == "exit" do
+#     if input == "list"
+#       list(songs_array)
+#     elsif input == "play"
+#       play(songs_array)
+#     elsif input == "help"
+#       help
+#     end
+#   end
+#   exit_jukebox
+# end
+    
   
   
 # def play(songs_array)
