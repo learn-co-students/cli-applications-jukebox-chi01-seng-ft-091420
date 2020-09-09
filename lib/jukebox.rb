@@ -1,4 +1,5 @@
 # Add your code here
+require_relative "../lib/jukebosx"
 songs = [
   "Phoenix - 1901",
   "Tokyo Police Club - Wait Up",
@@ -10,3 +11,4 @@ songs = [
   "Harry Chapin - Cats in the Cradle",
   "Amos Lee - Keep It Loose, Keep It Tight"
 ]
+run[songs]
